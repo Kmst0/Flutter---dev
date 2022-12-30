@@ -1,0 +1,72 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: AnaSayfa(),
+      routes: {
+        '/ikincisayfa': (context) => IkinciSayfa(),
+        '/AnaSayfa': (context) => AnaSayfa(),
+        '/Ucuncusayfa': (context) => UcuncuSayfa(),
+      },
+    ),
+  );
+}
+
+class AnaSayfa extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('Ana sayfa'),
+            onTap: () {
+              Navigator.pushNamed(context, '/AnaSayfa');
+            },
+          ),
+          ListTile(
+            title: Text('İkinci sayfa'),
+            onTap: () {
+              Navigator.pushNamed(context, '/ikincisayfa');
+            },
+          ),
+          ListTile(
+            title: Text('Üçüncü sayfa'),
+            onTap: () {
+              Navigator.pushNamed(context, '/Ucuncusayfa');
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class IkinciSayfa extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('İkinci Sayfa'),
+      ),
+      body: Center(
+        child: Text('Bu ikinci sayfa.'),
+      ),
+    );
+  }
+}
+
+class UcuncuSayfa extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Üçüncü Sayfa'),
+      ),
+      body: Center(
+        child: Text('Bu Üçüncü sayfa.'),
+      ),
+    );
+  }
+}
